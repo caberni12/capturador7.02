@@ -1,7 +1,9 @@
-/* ===================== BASE ===================== */
-*{
+/* =====================================================
+   RESET / BASE
+   ===================================================== */
+   *{
     box-sizing:border-box;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
   }
   
   body{
@@ -10,33 +12,43 @@
     color:#0f172a;
   }
   
+  /* =====================================================
+     CONTENEDOR GENERAL
+     ===================================================== */
   .wrap{
-    max-width:480px;
-    margin:auto;
-    padding:14px;
+    width:100%;
+    max-width:100%;
+    padding:12px;
   }
   
   .card{
-    background:#fff;
-    border-radius:20px;
-    padding:16px;
+    width:100%;
+    background:#ffffff;
+    border-radius:22px;
+    padding:20px;
     box-shadow:0 10px 25px rgba(0,0,0,.08);
   }
   
+  /* =====================================================
+     TITULOS
+     ===================================================== */
   h2{
     text-align:center;
-    margin:0 0 10px;
+    margin:10px 0 22px;
     font-size:18px;
   }
   
+  /* =====================================================
+     INPUTS / BOTONES (FULL WIDTH REAL)
+     ===================================================== */
   input,
   button{
     width:100%;
-    padding:14px;
-    margin-top:10px;
-    border-radius:14px;
+    padding:18px;
+    margin-top:18px;
+    border-radius:22px;
     border:1px solid #e2e8f0;
-    font-size:15px;
+    font-size:16px;
   }
   
   button{
@@ -45,73 +57,118 @@
     cursor:pointer;
   }
   
-  /* ===================== COLORES ===================== */
+  /* =====================================================
+     COLORES
+     ===================================================== */
   .primary{background:#0ea5e9;color:#fff}
   .secondary{background:#64748b;color:#fff}
   .success{background:#22c55e;color:#fff}
   .warn{background:#f59e0b;color:#fff}
   .danger{background:#ef4444;color:#fff}
   
-  /* ===================== BOTONES ESPECIALES ===================== */
-  .qrbtn{
-    width:64px;
-    background:#22c55e;
-    color:#fff;
-    font-size:22px;
+  /* =====================================================
+     TABS SUPERIORES (NO SE SALEN DEL BODY)
+     ===================================================== */
+  .tabbar{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+    width:100%;
   }
   
-  .clearbtn{
-    width:64px;
-    background:#f59e0b;
-    color:#fff;
-    font-size:18px;
+  .tabbar button{
+    flex:1;
+    padding:16px 10px;
+    font-size:15px;
+    border-radius:18px;
   }
   
-  .flashqr{
-    width:64px;
-    background:#0f172a;
-    color:#fff;
-    font-size:22px;
-    border-radius:14px;
-  }
-  
-  /* ===================== LAYOUT ===================== */
+  /* =====================================================
+     CAMPOS CON BOTONES (UBICACIÓN / CÓDIGO)
+     ===================================================== */
   .field{
     display:flex;
-    gap:8px;
+    gap:12px;
+    margin-top:20px;
   }
   
   .field input{
     flex:1;
   }
   
-  /* Fuerza botones grises al ancho completo */
-  button.secondary{
-    width:100%;
+  /* botones pequeños */
+  .qrbtn,
+  .clearbtn,
+  .flashqr{
+    width:60px;
+    height:60px;
+    border-radius:18px;
+    font-size:22px;
   }
   
-  /* ===================== SCANNER ===================== */
+  .qrbtn{background:#22c55e;color:#fff}
+  .clearbtn{background:#f59e0b;color:#fff}
+  .flashqr{background:#0f172a;color:#fff}
+  
+  /* =====================================================
+     NOTAS / TOTAL
+     ===================================================== */
+  .note{
+    font-size:13px;
+    color:#64748b;
+    margin-top:8px;
+  }
+  
+  .total{
+    margin:18px 0;
+    padding:16px;
+    border-radius:22px;
+    background:#0f172a;
+    color:#fff;
+    text-align:center;
+    font-weight:700;
+  }
+  
+  /* =====================================================
+     PREVIEW
+     ===================================================== */
+  .preview{
+    margin-top:22px;
+    padding:18px;
+    border-radius:22px;
+    border:2px dashed #0ea5e9;
+  }
+  
+  /* =====================================================
+     SCANNER – MÁS AIREADO / CUADRADO (MÓVIL)
+     ===================================================== */
   #scannerBox{
     display:none;
     position:relative;
-    margin-top:12px;
-    border-radius:18px;
+    width:100%;
+    max-width:420px;
+    height:300px;
+    margin:30px auto;
+    border-radius:26px;
     overflow:hidden;
     background:#000;
   }
   
+  /* marco */
   .scan-frame{
     position:absolute;
-    inset:0;
-    border:2px solid rgba(239,68,68,.7);
+    inset:22%;
+    border-radius:22px;
+    border:2px solid rgba(255,255,255,.85);
   }
   
+  /* línea */
   .scan-line{
     position:absolute;
-    left:0;
-    right:0;
+    left:22%;
+    right:22%;
     height:2px;
-    background:red;
+    background:#fff;
     animation:scan 2s linear infinite;
   }
   
@@ -121,28 +178,30 @@
     100%{top:0}
   }
   
+  /* controles */
   .scanner-controls{
     position:absolute;
-    bottom:10px;
-    left:10px;
-    right:10px;
+    bottom:14px;
+    left:14px;
+    right:14px;
     display:flex;
-    gap:10px;
+    gap:12px;
   }
   
   .ctrl{
     flex:1;
-    border-radius:12px;
-    padding:10px;
+    border-radius:16px;
+    padding:12px;
   }
   
-  /* ===================== LISTADO ===================== */
+  /* =====================================================
+     LISTADO CAPTURA
+     ===================================================== */
   .row{
     background:#f8fafc;
-    padding:12px;
-    border-radius:12px;
-    margin-top:8px;
-    cursor:pointer;
+    padding:14px;
+    border-radius:16px;
+    margin-top:12px;
   }
   
   .row.editing{
@@ -155,178 +214,23 @@
     color:#475569;
   }
   
-  .preview{
-    border:2px dashed #0ea5e9;
-  }
-  
-  .total{
-    margin-top:10px;
-    padding:12px;
-    border-radius:12px;
-    background:#0f172a;
-    color:#fff;
-    text-align:center;
-    font-weight:700;
-  }
-  
-  .note{
-    font-size:12px;
-    color:#64748b;
-    margin-top:4px;
-  }
-  
-  /* ===================== TABS ===================== */
-  .tabbar{
-    display:flex;
-    gap:8px;
-    margin-bottom:10px;
-  }
-  
-  .tabbar button{
-    flex:1;
-  }
-  
-  .tab{
-    display:none;
-  }
-  
-  .tab.active{
-    display:block;
-  }
-  
-  /* ===================== IMPORTADOR ===================== */
-  .progress{
-    height:16px;
-    background:#e5e7eb;
-    border-radius:10px;
-    overflow:hidden;
-    margin-top:10px;
-  }
-  
-  .progress div{
-    height:100%;
-    width:0;
-    background:#22c55e;
-    transition:.3s;
-  }
-  
-  .msg{
-    text-align:center;
-    margin-top:10px;
-    font-weight:700;
-  }
-  
-  /* ===================== BOTÓN ELIMINAR ===================== */
   .delbtn{
     float:right;
     background:#ef4444;
     color:#fff;
     border:none;
     border-radius:50%;
-    width:24px;
-    height:24px;
+    width:26px;
+    height:26px;
     display:flex;
     align-items:center;
     justify-content:center;
     font-size:16px;
-    font-weight:bold;
-    line-height:1;
-    cursor:pointer;
-    box-shadow:0 2px 6px rgba(0,0,0,.25);
   }
   
-  /* ===================== ESCRITORIO ===================== */
-  @media (min-width: 768px){
-  
-    .wrap{
-      max-width:1100px;
-    }
-  
-    .card{
-      padding:24px;
-    }
-  
-    /* Capturador en dos columnas */
-    #captura{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:20px;
-    }
-  
-    /* Elementos a ancho completo */
-    #captura h2,
-    #totalizador,
-    #preview,
-    #scannerBox,
-    #tabla,
-    #captura > button,
-    #captura .field:last-of-type{
-      grid-column:1 / -1;
-    }
-  
-    /* Scanner más grande */
-    #scannerBox{
-      height:420px;
-    }
-  
-    /* Importador centrado */
-    #importar{
-      max-width:600px;
-      margin:auto;
-    }
-  
-    /* Botones más cómodos */
-    button{
-      font-size:16px;
-    }
-  
-    /* Ajuste fields con botones pequeños */
-    .field{
-      display:grid;
-      grid-template-columns:1fr 64px 64px;
-      gap:8px;
-    }
-  
-    /* Campo Cámara ocupa todo el ancho */
-    .field:last-of-type{
-      grid-template-columns:1fr;
-    }
-  
-    .field:last-of-type button{
-      width:100%;
-    }
-  }
-  
-  /* ===================== ESCRITORIO: OCULTAR SCANNER Y CÁMARA ===================== */
-  @media (min-width: 768px){
-  
-  /* Botones de cámara / QR / linterna */
-  .qrbtn,
-  .flashqr,
-  .ctrl,
-  .scanner-controls{
-    display: none !important;
-  }
-  
-  /* Caja del scanner */
-  #scannerBox,
-  .scan-frame,
-  .scan-line{
-    display: none !important;
-  }
-  
-  /* Campos que solo tenían cámara */
-  .field{
-    grid-template-columns: 1fr !important;
-  }
-  
-  /* Botón Cámara (gris) */
-  button.secondary{
-    display: none !important;
-  }
-  }
-  
-  /* ===== MODAL MODERNO ===== */
+  /* =====================================================
+     MODAL CONSULTA
+     ===================================================== */
   .modal{
     position:fixed;
     inset:0;
@@ -338,86 +242,102 @@
     z-index:9999;
   }
   
-  .modal.show{ display:flex; }
+  .modal.show{display:flex}
   
   .modal-card{
     background:#fff;
     width:95%;
     max-width:900px;
     max-height:90vh;
-    border-radius:20px;
-    padding:18px;
+    border-radius:22px;
+    padding:20px;
     display:flex;
     flex-direction:column;
-    box-shadow:0 30px 60px rgba(0,0,0,.35);
   }
   
-  .modal-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    margin-bottom:10px;
-  }
-  
-  .modal-header button{
-    background:#f1f5f9;
-    border:none;
-    border-radius:10px;
-    padding:6px 10px;
-    cursor:pointer;
-  }
-  
-  /* ===== INPUT ===== */
-  #buscarConsulta{
-    padding:14px 16px;
-    border-radius:16px;
-    border:1px solid #cbd5e1;
-    font-size:16px;
-    margin-bottom:12px;
-  }
-  
-  /* ===== SCROLL TABLA ===== */
+  /* =====================================================
+     CONSULTA – LISTA NAVEGABLE
+     ===================================================== */
   .table-scroll{
     flex:1;
     overflow-y:auto;
-    border-radius:14px;
+    border-radius:16px;
     border:1px solid #e2e8f0;
+    background:#f8fafc;
   }
   
-  /* scrollbar */
-  .table-scroll::-webkit-scrollbar{ width:8px }
-  .table-scroll::-webkit-scrollbar-thumb{
-    background:#94a3b8;
-    border-radius:10px;
-  }
-  
-  /* ===== TABLA ===== */
   #tablaConsulta{
     width:100%;
     border-collapse:separate;
-    border-spacing:0 6px;
+    border-spacing:0 10px;
   }
   
   #tablaConsulta thead th{
     background:#0ea5e9;
     color:#fff;
-    padding:12px;
-    text-align:left;
-    border-radius:10px;
-  }
-  
-  #tablaConsulta td{
-    padding:12px;
+    padding:14px;
+    border-radius:14px;
   }
   
   #tablaConsulta tbody tr{
-    background:#f8fafc;
-    transition:.15s;
+    background:#fff;
+    cursor:pointer;
+  }
+  
+  #tablaConsulta td{
+    padding:16px;
   }
   
   #tablaConsulta tbody tr.selected{
-    background:#bae6fd !important;
+    background:#bae6fd;
     outline:2px solid #0ea5e9;
+    font-weight:700;
   }
   
+  /* =====================================================
+     ESCRITORIO (LIMPIO, SIN SCANNER)
+     ===================================================== */
+  @media (min-width:768px){
+  
+    .wrap{
+      max-width:1200px;
+      margin:auto;
+    }
+  
+    .card{
+      padding:28px;
+    }
+  
+    #captura{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+    }
+  
+    #captura h2,
+    #totalizador,
+    #preview,
+    #tabla,
+    #captura > button{
+      grid-column:1 / -1;
+    }
+  
+    .field{
+      display:grid;
+      grid-template-columns:1fr 60px 60px;
+      gap:12px;
+    }
+  
+    /* ❌ scanner NO existe en escritorio */
+    #scannerBox,
+    .scan-frame,
+    .scan-line,
+    .scanner-controls,
+    .qrbtn,
+    .flashqr,
+    .ctrl,
+    button.secondary{
+      display:none !important;
+    }
+  }
   
